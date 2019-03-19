@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 const Header = (props) =>{
     return(
-        <div className="text-center">
+        <header className="text-center">
             <h2>{props.titulo}</h2>
-        </div>
+        </header>
     );
 }
 export default Header;
