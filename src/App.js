@@ -3,12 +3,26 @@ import Header from './componentes/Header';
 import FormularioClima from './componentes/FormularioClima';
 class App extends Component {
   state={
+    error: ''
+  }
 
+  componentDidMount(){
+    this.setState({
+      error: false
+    })
   }
 
   //creamos un metodo para recibir el objeto del FormularioClima
   metodoDatosClima = datosRecibidoClima =>{
-     console.log(datosRecibidoClima);
+
+    if(datosRecibidoClima.ciudadValue === '' || datosRecibidoClima.paisValue === ''){
+      this.setState({
+        error: true
+      })
+    }else{
+      console.log('todo esta bien');
+    }
+     
   }
   render() {
     return (
