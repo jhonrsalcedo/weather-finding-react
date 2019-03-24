@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import Header from './componentes/Header';
 import FormularioClima from './componentes/FormularioClima';
 class App extends Component {
+  state={
+
+  }
+
+  //creamos un metodo para recibir el objeto del FormularioClima
+  metodoDatosClima = datosRecibidoClima =>{
+     console.log(datosRecibidoClima);
+  }
   render() {
     return (
      <div className="container">
@@ -11,7 +19,9 @@ class App extends Component {
           titulo={"Clima Api React "}
           />
         
-          <FormularioClima/>
+          <FormularioClima
+            datosClima ={this.metodoDatosClima}
+          />
         </div>
      </div>
     );
