@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import Header from './componentes/Header';
 import FormularioClima from './componentes/FormularioClima';
 class App extends Component {
-  state={
+ constructor(props){
+   super(props);
+   this.state={
     error: ''
   }
+ }
 
   componentDidMount(){
     this.setState({

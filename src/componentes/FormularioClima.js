@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 
 export default class FormularioClima extends Component{
+ constructor(props){
+     super(props);
+         this.state= {
+            // error:false,
+            ciudadValue:'',
+            paisValue:''
+         }
+ }
 
-  state = {
-    // error:false,
-    ciudadValue:'',
-    paisValue:''
-  }
-    
     HandlebuscarClima = (e) =>{
         e.preventDefault();
 
