@@ -5,19 +5,19 @@ export default class FormularioClima extends Component{
      super(props);
          this.state= {
             // error:false,
-            ciudadValue:'',
-            paisValue:''
+            cityValue:'',
+            countryValue:''
          }
  }
 
-    HandlebuscarClima = (e) =>{
+    HandlefindWeather = (e) =>{
         e.preventDefault();
 
-       const datosClimaForm = this.state 
-        // console.log(respuestaClima);
+       const weatherForm = this.state 
+     //console.log(weatherForm);
 
-      // se envia el objeto hacia el padre para que actualizar el state
-      this.props.datosClima(datosClimaForm);
+      // se envia el objeto por props hacia el padre para que actualizar el state
+      this.props.dataWeather(weatherForm);
       
 
       //reinicar formulario
@@ -28,7 +28,7 @@ export default class FormularioClima extends Component{
         
     }
 
-    HandleClimaInput = (e) =>{
+    HandleWeatherInput = (e) =>{
         this.setState({
           [e.target.name]: e.target.value
         })
@@ -36,17 +36,17 @@ export default class FormularioClima extends Component{
     render(){
         return(
             <div className="container">
-              <form onSubmit={this.HandlebuscarClima}>
+              <form onSubmit={this.HandlefindWeather}>
             <div className="row">
           
             <div className="col-6 col-md-4">
-            <label htmlFor="ciudad">Ciudad:</label>
-    <input type="text" className="form-control" id="ciudad" placeholder="Digite la Ciudad" name="ciudadValue" onChange={this.HandleClimaInput} value={this.state.ciudadValue}/>
+            <label htmlFor="city">Ciudad:</label>
+    <input type="text" className="form-control" id="city" placeholder="Digite la Ciudad" name="cityValue" onChange={this.HandleWeatherInput} value={this.state.cityValue}/>
             
             </div>
             <div className="col-6 col-md-4">
-            <label htmlFor="pais">Pais:</label>
-            <select className="form-control" name="paisValue" onChange={this.HandleClimaInput} value={this.state.paisValue}>
+            <label htmlFor="country">Pais:</label>
+            <select className="form-control" id="country" name="countryValue" onChange={this.HandleWeatherInput} value={this.state.countryValue}>
       <option value=""  defaultValue>Elige un pais</option>
       <option value="AR">Argentina</option>
       <option value="CO">Colombia</option>

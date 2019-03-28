@@ -16,14 +16,14 @@ class App extends Component {
   }
 
   //creamos un metodo para recibir el objeto del FormularioClima
-  metodoDatosClima = datosRecibidoClima =>{
+  methodDataWeather = dataReceivedWeather =>{
 
-    if(datosRecibidoClima.ciudadValue === '' || datosRecibidoClima.paisValue === ''){
+    if(dataReceivedWeather.cityValue === '' || dataReceivedWeather.countryValue === ''){
       this.setState({
         error: true
       })
     }else{
-      console.log('todo esta bien');
+      console.log(dataReceivedWeather);
     }
      
   }
@@ -33,11 +33,12 @@ class App extends Component {
       <div className="row">
         
           <Header 
-          titulo={"Clima Api React "}
+          title={"Clima Api React "}
           />
         
           <FormularioClima
-            datosClima ={this.metodoDatosClima}
+          //props dataWeather que viene del formulario
+            dataWeather ={this.methodDataWeather}
           />
         </div>
      </div>
