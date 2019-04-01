@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './componentes/Header';
-import FormularioClima from './componentes/FormularioClima';
+import Formweather from './componentes/Formweather';
+import Error from './componentes/Error';
 class App extends Component {
  constructor(props){
    super(props);
@@ -28,6 +29,11 @@ class App extends Component {
      
   }
   render() {
+    const error = this.state.error;
+      let result; 
+      if (error) {
+        result = <Error mensaje="Ambos campos son obligatorios"/>
+      }
     return (
      <div className="container">
       <div className="row">
@@ -36,10 +42,11 @@ class App extends Component {
           title={"Clima Api React "}
           />
         
-          <FormularioClima
+          <Formweather
           //props dataWeather que viene del formulario
             dataWeather ={this.methodDataWeather}
           />
+          {result}
         </div>
      </div>
     );

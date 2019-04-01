@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export default class FormularioClima extends Component{
+export default class Formweather extends Component{
  constructor(props){
      super(props);
          this.state= {
