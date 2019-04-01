@@ -6,8 +6,14 @@ class App extends Component {
  constructor(props){
    super(props);
    this.state={
-    error: ''
+    error: '',
+    query: {}
   }
+ }
+
+//metodo para revisar state
+ componentDidUpdate(){
+   this.queryApi();
  }
 
   componentDidMount(){
@@ -15,7 +21,11 @@ class App extends Component {
       error: false
     })
   }
-
+  // componente para realizar consulata a la api
+  queryApi = () => {
+    const {cityValue, countryValue} = this.state.query
+    console.log(cityValue)
+  }
   //creamos un metodo para recibir el objeto del FormularioClima
   methodDataWeather = dataReceivedWeather =>{
 
@@ -24,7 +34,9 @@ class App extends Component {
         error: true
       })
     }else{
-      console.log(dataReceivedWeather);
+      this.setState({
+        query: dataReceivedWeather
+      })
     }
      
   }
