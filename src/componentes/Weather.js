@@ -7,8 +7,17 @@ class Weather extends Component{
         const {name, weather, main} = this.props.responseWeather;
         
         if(!name || !weather || !main) return null;
+
+        const kelvin = 273.15;
+
+        const urlIcono = `http://openweathermap.org/img/w/${weather[0].icon}.png`
         return(
-            <h1>Desde Component Weather</h1>
+            <div>
+                <h3>Resultado Clima de: {name}</h3>
+                <p>Actual {(main.temp - kelvin).toFixed(2) } &deg;C <img src={urlIcono} alt="`clima de ${name}`" /></p>
+                <p>Max: {(main.temp_max - kelvin).toFixed(2) } &deg;C</p>
+                <p>Min: {(main.temp_min - kelvin).toFixed(2) } &deg;C</p>
+            </div>
         )
 
     }
