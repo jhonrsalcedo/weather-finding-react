@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+
 class Weather extends Component{
 
     showResult = () =>{
@@ -13,19 +14,15 @@ class Weather extends Component{
         const urlIcono = `http://openweathermap.org/img/w/${weather[0].icon}.png`;
         const alt = "`clima de ${name}`";
         return(
-            <div>
+            <div className="alert alert-info col-md-8 ">
                 <h3>Resultado Clima de: {name}</h3>
                 <p>Actual {(main.temp - kelvin).toFixed(2) } &deg;C <img src={urlIcono} alt={alt} /></p>
                 <p>Max: {(main.temp_max - kelvin).toFixed(2) } &deg;C</p>
                 <p>Min: {(main.temp_min - kelvin).toFixed(2) } &deg;C</p>
             </div>
         )
-
     }
-
     render(){
-
-      
         // console.log(this.props.responseWeather);
         return(
             <div className="container">

@@ -20,7 +20,7 @@ class App extends Component {
   //  console.log('State');
   //  console.log(prevState);
   /*eslint-disable eqeqeq*/
-  if( prevState.query != this.state.query){
+  if( prevState.query !== this.state.query){
     this.queryApi();
   }
    
