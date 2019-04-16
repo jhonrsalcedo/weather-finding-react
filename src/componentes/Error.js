@@ -7,7 +7,7 @@ const Error = (props) => {
             <div className="row">
             <div className="col-lg-12 col-md-6 offset-md-1 mt-3">
                 <div className="alert alert-danger text-center w-75">
-                    {props.mensaje}
+                    {props.message}
                 </div>
             
             </div>
@@ -17,6 +17,6 @@ const Error = (props) => {
 }
 
 Error.propTypes ={
-    mensaje: PropTypes.string.isRequired
+    message: PropTypes.string.isRequired
 }
 export default Error;

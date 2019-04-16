@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 
 class Weather extends Component{
@@ -12,7 +13,7 @@ class Weather extends Component{
         const kelvin = 273.15;
 
         const urlIcono = `http://openweathermap.org/img/w/${weather[0].icon}.png`;
-        const alt = "`clima de ${name}`";
+        const alt = `clima de ${name}`;
         return(
             <div className="alert alert-info col-md-8 ">
                 <h3>Resultado Clima de: {name}</h3>
@@ -38,5 +39,7 @@ class Weather extends Component{
         );
     }
 }
-
+Weather.propTypes ={
+    responseWeather: PropTypes.object.isRequired
+}
 export default Weather;

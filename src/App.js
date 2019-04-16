@@ -80,7 +80,7 @@ class App extends Component {
     const error = this.state.error;
       let result; 
       if (error) {
-        result = <Error mensaje="Ambos campos son obligatorios"/>
+        result = <Error message="Ambos campos son obligatorios"/>
       } else{
         result = <Weather responseWeather = {this.state.response} />
       }

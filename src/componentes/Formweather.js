@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
-export default class Formweather extends Component{
+class Formweather extends Component{
  constructor(props){
      super(props);
          this.state= {
@@ -66,3 +67,7 @@ export default class Formweather extends Component{
         );
     }
 }
+Formweather.propTypes={
+  dataWeather: PropTypes.func.isRequired
+}
+export default Formweather;
