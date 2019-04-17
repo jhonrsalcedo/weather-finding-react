@@ -77,11 +77,14 @@ class App extends Component {
      
   }
   render() {
-    const error = this.state.error;
+    const {error} = this.state,
+    {cod} = this.state.result
       let result; 
       if (error) {
         result = <Error message="Ambos campos son obligatorios"/>
-      } else{
+      } else if(cod=== "404"){
+        result = <Error message="Ciudad No Encontrada"/>
+      } else {
         result = <Weather responseWeather = {this.state.response} />
       }
     return (
